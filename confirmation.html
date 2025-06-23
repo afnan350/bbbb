@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Confirmation – Mujahid</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Thank You!</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="order.html">Order</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="confirmation">
+    <h2>Your Order Details:</h2>
+    <div id="details"></div>
+    <p id="msg"></p>
+    <a href="index.html">Back to Shop</a>
+  </section>
+
+  <script>
+    const data = JSON.parse(sessionStorage.getItem('orderData') || '{}');
+    if (data.name) {
+      document.getElementById('details').innerHTML = `
+        <p><strong>Name:</strong> ${data.name}</p>
+        <p><strong>Phone:</strong> ${data.phone}</p>
+        <p><strong>Item:</strong> ${data.quantity} × ${data.item} (Rs. ${data.price})</p>
+        <p><strong>Address:</strong> ${data.address}</p>
+      `;
+      const total = data.quantity * Number(data.price);
+      document.getElementById('msg').textContent = `Your total is Rs. ${total}. We will contact you soon.`;
+      sessionStorage.clear();
+    } else {
+      document.getElementById('msg').textContent = 'No order found.';
+    }
+  </script>
+</body>
+</html>

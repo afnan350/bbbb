@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mujahid Motorcycle Workshop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Mujahid Motorcycle Workshop</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="order.html">Order</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="products">
+    <div class="product">
+      <img src="images/download (1).jpeg" alt="Motorcycle Engine">
+      <h2>Motorcycle Engine</h2><p>Rs. 15,000</p>
+      <button onclick="selectProduct('Motorcycle Engine',15000)">Order</button>
+    </div>
+    <div class="product">
+      <img src="images/helmet.jpeg" alt="Rider Helmet">
+      <h2>Rider Helmet</h2><p>Rs. 2,500</p>
+      <button onclick="selectProduct('Rider Helmet',2500)">Order</button>
+    </div>
+    <div class="product">
+      <img src="images/chainset.jpeg" alt="Chain Set">
+      <h2>Chain Set</h2><p>Rs. 3,000</p>
+      <button onclick="selectProduct('Chain Set',3000)">Order</button>
+    </div>
+    <div class="product">
+      <img src="images/clutch.jpeg" alt="Clutch Plate">
+      <h2>Clutch Plate</h2><p>Rs. 1,800</p>
+      <button onclick="selectProduct('Clutch Plate',1800)">Order</button>
+    </div>
+    <div class="product">
+      <img src="images/toolkit.jpeg" alt="Tool Kit">
+      <h2>Tool Kit</h2><p>Rs. 1,000</p>
+      <button onclick="selectProduct('Tool Kit',1000)">Order</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>📞 <a href="tel:+923001234567">+92 300 1234567</a> | 📧 <a href="mailto:info@mujahidbikes.com">info@mujahidbikes.com</a><br>
+    © 2025 Mujahid Motorcycle Workshop</p>
+  </footer>
+
+  <script>
+    function selectProduct(name, price) {
+      sessionStorage.setItem('product', name);
+      sessionStorage.setItem('price', price);
+      window.location.href = 'order.html';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Now – Mujahid</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Place Your Order</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="order.html">Order</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="order-form">
+    <form id="orderForm">
+      <label>Name:</label><input type="text" name="name" required>
+      <label>Phone:</label><input type="tel" name="phone" required>
+      <label>Item:</label><input type="text" name="item" id="itemField" readonly>
+      <label>Price (Rs):</label><input type="text" name="price" id="priceField" readonly>
+      <label>Quantity:</label><input type="number" name="quantity" min="1" value="1" required>
+      <label>Address:</label><textarea name="address" required></textarea>
+      <button type="submit">Checkout</button>
+    </form>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('itemField').value = sessionStorage.getItem('product') || '';
+      document.getElementById('priceField').value = sessionStorage.getItem('price') || '';
+    });
+
+    document.getElementById('orderForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(e.target));
+      sessionStorage.setItem('orderData', JSON.stringify(data));
+      window.location.href = 'confirmation.html';
+    });
+  </script>
+</body>
+ 

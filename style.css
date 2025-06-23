@@ -1,0 +1,13 @@
+body { margin: 0; font-family: Arial, sans-serif; background: #f4f4f4; }
+header { background: #232f3e; color: white; padding: 15px; text-align: center; }
+nav a { color: #ffd700; margin: 0 10px; text-decoration: none; font-weight: bold; }
+footer { background: #232f3e; color: white; text-align: center; padding: 10px; }
+.products { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
+.product { background: white; padding: 15px; border: 1px solid #ddd; text-align: center; display: flex; flex-direction: column; }
+.product img { width: 100%; height: 150px; object-fit: cover; }
+.product button { margin-top: auto; padding: 10px; background: #ffd700; border: none; cursor: pointer; }
+.order-form, .confirmation, .contact-info { background: white; max-width: 500px; margin: 30px auto; padding: 20px; border: 1px solid #ddd; }
+label { display: block; margin-top: 10px; }
+input, textarea, button { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 3px; }
+button { background: #232f3e; color: white; cursor: pointer; }
+a { color: #232f3e; text-decoration: none; font-weight: bold; }

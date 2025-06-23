@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact – Mujahid Motorcycle Workshop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Contact Us</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="order.html">Order</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="contact-info">
+    <h2>📍 Workshop Location</h2>
+    <p>Mujahid Motorcycle Workshop, Plot #15, Auto Market, Lahore, Pakistan</p>
+
+    <h2>📞 Phone</h2>
+    <p><a href="tel:+923001234567">+92 300 1234567</a></p>
+
+    <h2>📧 Email</h2>
+    <p><a href="mailto:info@mujahidbikes.com">info@mujahidbikes.com</a></p>
+
+    <h2>💬 Send a Message</h2>
+    <form id="contactForm">
+      <label>Your Name:</label><input type="text" required>
+      <label>Your Email:</label><input type="email" required>
+      <label>Message:</label><textarea rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div id="contactMsg"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 Mujahid Motorcycle Workshop</p>
+  </footer>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("contactMsg").innerHTML = "<p>✅ Your message has been sent! We'll contact you soon.</p>";
+    });
+  </script>
+</body>
+</html>
